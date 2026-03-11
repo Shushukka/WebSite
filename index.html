@@ -17,7 +17,7 @@
 
     <!-- 1 HERO -->
     <section class="video-section">
-        <video autoplay muted loop>
+        <video autoplay muted>
             <source src="assets/video/video.mp4" type="video/mp4">
         </video>
         <div class="video-overlay">
@@ -36,7 +36,7 @@
 
     <!-- 2 STORY -->
     <section class="section">
-        <div class="container narrow center">
+        <div class="container center">
 
             <div class="textlines">
                 <p>Мы нашли друг друга.</p>
@@ -162,7 +162,7 @@
 
     <!-- 6 DRESS CODE -->
     <section class="section">
-        <div class="container center narrow">
+        <div class="container center">
 
             <div class="hero-date decor-title">Дресс-код</div>
             <div class="lead-text">Мы очень ждём и готовимся к нашему незабываемому дню! Поддержите нас Вашими улыбками и
@@ -187,9 +187,11 @@
 
     <!-- 7 COUNTDOWN -->
     <section class="section light">
+
         <div class="container center">
+                <div class="hero-date">До нашей свадьбы осталось</div>
+            
             <div>
-                <div class="hero-date decor-title">До нашей свадьбы осталось</div>
                 <div class="countdown-wrapper">
                     <div class="count-unit">
                         <div class="count-digits" id="days"></div>
@@ -217,9 +219,10 @@
 
     <!-- 8 SLIDER -->
     <section class="section">
+        <div class="hero-date decor-title">Пожелания</div>
         <div class="container center narrow">
 
-            <div class="hero-date decor-title">Пожелания</div>
+            
 
             <div class="slider">
                 <div class="slide active">Пожалуйста, не дарите нам цветы! Мы не успеем насладиться их красотой и ароматом.
@@ -232,9 +235,9 @@
                 <button class="nav-btn" onclick="prevSlide()"><</button>
 
                         <div class="counter">
-                            <span id="currentSlide">1</span>
-                            <span class="slash">/</span>
-                            <span id="totalSlides">2</span>
+                            <span class= "counter-item" id="currentSlide">1</span>
+                            <span class="counter-item">/</span>
+                            <span class= "counter-item" id="totalSlides">2</span>
                         </div>
 
                         <button class="nav-btn" onclick="nextSlide()">></button>
@@ -257,9 +260,10 @@
 
     <!-- 10 RSVP -->
     <section class="section">
+            <div class="hero-date decor-title">Анкета гостя</div>
+
         <div class="container center narrow">
 
-            <div class="hero-date decor-title">Анкета гостя</div>
             <div class="lead-text">Просим подтвердить своё присутствие на мероприятии до: <br> <br> 29 / 04 / 2026</div>
             <div class="RSVP_btn">
             <button class="btn" onclick="sendTelegram()">Подтвердить</button>
@@ -269,7 +273,7 @@
 
     <!-- 11 VIDEO -->
     <section class="video-section">
-        <video autoplay muted loop>
+        <video autoplay muted>
             <source src="assets/video/video.mp4" type="video/mp4">
         </video>
         <div class="video-overlay">
