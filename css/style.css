@@ -10,7 +10,11 @@ body {
     background: #fff;
     overflow-x: hidden;
 }
-
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 h2,
 h3 {
     font-size: clamp(32px, 15vw, 150px);
@@ -45,6 +49,7 @@ h3.decor-title {
 
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: auto
 }
 
