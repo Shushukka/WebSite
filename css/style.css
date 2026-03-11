@@ -1,0 +1,593 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #000000;
+    background: #fff;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+h2,
+h3 {
+    font-size: clamp(32px, 15vw, 150px);
+    font-family: "CyrillicScript";
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: lighter;
+}
+
+h2.decor-title,
+h3.decor-title {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+
+.section {
+    padding: 7vw 3vw;
+}
+
+.light {
+    background: #fde2e7;
+    color: #000000;
+}
+
+.light .decor-title::after,
+.light .decor-title::before {
+    background: #000000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto
+}
+
+.narrow {
+    max-width: 750px
+}
+
+.center {
+    text-align: center
+}
+
+.lead-text {
+    font-size: clamp(1vw, 4vw, 150px);
+    font-family: "Segoe UI Light", sans-serif;
+    margin: 5vw auto;
+}
+.text-video {
+    font-size: clamp(1vw, 4vw, 150px);
+    font-family: "Segoe UI Light", sans-serif;
+    margin: 1vw auto;
+}
+.divider {
+    width: 30%;
+    height: 0.2vw;
+    background: #aaa;
+    margin: 5vw auto;
+}
+
+.split {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+}
+
+
+.portrait {
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+
+}
+
+.portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.horizontal {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 28px;
+    margin: 5vw auto;
+}
+
+.horizontal img {
+    width: 100%;
+    height: 10%;
+    object-fit: cover;
+}
+
+/* HERO */
+
+.hero {
+    height: 100vh;
+    background: url('../assets/images/hero.jpg') center 20% / cover no-repeat;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    /* растягиваем содержимое вертикально */
+    color: white;
+    text-align: center;
+    font-family: "CyrillicScript";
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* имена вверх, дата вниз */
+    align-items: center;
+
+    height: 100%;
+    /* ключевой момент */
+    width: 100%;
+
+    padding-top: 10vw;
+    padding-bottom: 15vw;
+
+    color: white;
+    font-family: "CyrillicScript";
+}
+
+.hero-names {
+    font-size: clamp(32px, 15vw, 150px);
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hero-date {
+    font-size: clamp(20px, 10vw, 80px);
+    line-height: 1.1;
+    font-family: "CyrillicScript";
+}
+
+
+
+/* STORY */
+.textlines {
+    font-family: "CyrillicScript";
+    font-size: clamp(28px, 7vw, 150px);
+}
+
+
+/* CALENDAR */
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin: 5vw auto;
+    font-size: clamp(1vw, 4vw, 150px);
+    justify-content: center;
+}
+
+.calendar div {
+    position: relative;
+    /* ВАЖНО */
+    padding: 3vw;
+}
+
+.calendar .active {
+    position: relative;
+        color: #f73131;
+
+    /* красный текст, как на примере */
+    text-align: center;
+    z-index: 1;
+}
+
+/* Кольцо */
+.calendar .active::before {
+    content: "";
+    position: absolute;
+    top: 4vw;
+    left: 6.4vw;
+    width: 11vw;
+    /* размер кольца — адаптивный */
+    height: 11vw;
+    transform: translate(-50%, -50%) rotate(25deg);
+    background: url('../assets/images/black_ring.jpg') no-repeat center / contain;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.days {
+    font-size: clamp(1vw, 4vw, 150px);
+}
+
+.weekend {
+    color: #f73131;
+}
+
+.full-date {
+    font-size: clamp(20px, 6vw, 80px);
+    line-height: 1.1;
+    font-family: "CyrillicScript";
+}
+
+.decor-title {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    /* расстояние между текстом и линиями */
+}
+
+.decor-title::before,
+.decor-title::after {
+    content: "";
+    flex: 1;
+    /* линии растягиваются */
+    height: 0.1vw;
+    /* толщина линии */
+    background: #000000;
+    max-width: 200px;
+    /* цвет линии */
+}
+
+
+
+/* TIMELINE */
+
+.timeline {
+    margin: 2vw auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: 8vw auto;
+    /* иконка | текст */
+    gap: 3vw;
+    padding-left: 2.7vw;
+    /* чтобы линия не прилипала к краю */
+}
+
+/* Линия */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 7.5vw;
+    /* граница между колонками */
+    top: 2vw;
+    bottom: 3vw;
+    width: 0.3vw;
+    background: #ffffff;
+    z-index: 0;
+}
+
+/* Элемент */
+.timeline-item {
+    display: contents;
+    /* чтобы иконка и текст попадали в сетку */
+}
+
+/* Иконка */
+.timeline-icon {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    background: #fff;
+    border: 0.3vw solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    margin: 1.5vw auto;
+}
+
+/* SVG внутри круга */
+.timeline-icon img {
+    width: 60%;
+    /* регулируй размер иконки */
+    height: 60%;
+    object-fit: contain;
+}
+
+/* Контент */
+.timeline-content {
+    padding-left: 8vw;
+    /* чтобы текст не прилипал к линии */
+}
+
+
+.timeline-time {
+    font-size: 4vw;
+    color: #000000;
+    font-family: "Segoe UI Light", sans-serif;
+    font-weight: bolder;
+}
+
+.timeline-text {
+    font-size: 4vw;
+    color: #000000;
+    margin-top: 1vw;
+    font-family: "Segoe UI Light", sans-serif;
+    font-weight: bolder;
+}
+
+/* DRESS */
+
+.palette {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.palette span {
+    width: 11vw;
+    height: 11vw;
+    border-radius: 50%;
+    margin-left: -25px;
+    border: 0.5vw solid rgb(0, 0, 0);
+}
+
+/* COUNTDOWN */
+
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.count-unit {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.count-digits {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.count-digits span {
+    width: 55px;
+    height: 75px;
+    background: #ffffff;
+    border-radius: 12px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.label {
+    display: block;
+    margin-top: 12px;
+    font-size: 18px;
+    color: #000000;
+    font-family: "Segoe UI Light", sans-serif;
+    font-weight: bolder;
+    
+}
+
+
+/* SLIDER */
+
+.slide {
+    display: none;
+    font-size: 3.5vw;
+    font-family: "Segoe UI Light", sans-serif;
+}
+
+.slide.active {
+    display: block;
+    animation: fade .5s
+}
+
+@keyframes fade {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.slider-controls {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    font-size: 22px;
+    color: #000000;
+}
+
+.nav-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.25s;
+    color: #000000;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+.slash{
+    color: #000000;
+}
+.counter {
+    font-size: 22px;
+    font-weight: bolder;
+    color: #000000;
+}
+
+/* CONTACT */
+.contact {
+    height: 70vh;
+    background: url('../assets/images/hero.jpg') center 20% / cover no-repeat;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    /* растягиваем содержимое вертикально */
+    color: white;
+    text-align: center;
+}
+
+.info-box {
+    width: 80vw;
+    margin: 5vw auto;
+    padding: 3vw;
+    border: 0.4vw solid #ffffff;
+    /* белая рамка */
+    border-radius: 0vw;
+    /* можно 0, если нужен строгий квадрат */
+    text-align: center;
+    font-size: clamp(1vw, 4vw, 10vw);
+}
+
+.contact .decor-title::before,
+.contact .decor-title::after {
+    background: #fff;
+}
+.name-bold{
+    font-weight: bolder;
+}
+.phone{
+    margin-top: 4vw;
+}
+/* RSVP */
+
+/* VIDEO */
+
+.video-section {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+}
+
+/* Видео */
+.video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Затемнение */
+.video-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.829);
+    /* степень затемнения */
+    z-index: 1;
+    /* ниже текста, выше видео */
+}
+
+/* Текст */
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+    /* поверх затемнения */
+    color: #fff;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 2vw 2vw;
+    /* внутренние отступы */
+    margin: 1vw auto;
+    /* внешние отступы между кнопками */
+    background: rgb(252, 251, 251);
+    /* цвет фона */
+    color: #fff;
+    /* цвет текста */
+    text-decoration: none;
+    /* убрать подчёркивание */
+    font-size: clamp(1vw, 3.5vw, 20vw);
+    border-radius: 0.6vw;
+    /* скругление углов */
+    transition: 0.3s ease;
+    font-family: "Segoe UI Light", sans-serif;
+    font-weight: bolder;
+    color: #000000;
+     border: 0.3vw solid #000000; /* ← вот это добавляет рамку */
+    /* плавная анимация */
+    width: 50vw;
+}
+
+.btn:hover {
+    background: #444;
+    /* чуть светлее */
+    transform: translateY(-2px);
+}
+.RSVP_btn .btn{
+    width: 35vw;
+}
+@font-face {
+    font-family: "CyrillicScript";
+    src: url("../fonts/AstrumScriptCyrillicRegular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "GreatVibesCyr";
+    src: url("../fonts/GoodVibesPro.ttf") format("truetype");
+}
+
+
+@media(min-width:1080px) {
+    .split {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hero-names {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .hero-content {
+        padding-top: 50vw;
+        padding-bottom: 50vw;
+    }
+
+    .hero-names {
+        font-size: 20vw;
+    }
+}
