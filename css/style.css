@@ -565,7 +565,15 @@ h3.decor-title {
   transition: 0.2s;
   color: #000000;
 }
-
+.buttons button:active{
+  color: #000000 !important; 
+  -webkit-text-fill-color: #000000;
+  -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    outline: none !important;
+}
 /* Продолжить */
 #okBtn {
     background: #f2f2f2;
