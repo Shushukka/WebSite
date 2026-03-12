@@ -497,6 +497,15 @@ h3.decor-title {
 /* Тёмный фон */
 /* Тёмный фон на весь экран */
 /* Тёмный фон на весь экран */
+/* Убираем системный серый эффект нажатия на ВСЕХ элементах модалки */
+.modal, 
+.modal *, 
+.buttons button {
+    -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+    tap-highlight-color: rgba(0,0,0,0) !important;
+}
+
+/* Модалка */
 .modal {
   position: fixed;
   inset: 0;
@@ -505,30 +514,37 @@ h3.decor-title {
   justify-content: center;
   align-items: center;
   z-index: 3;
+
+  /* отключаем нативный overlay */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
-.modal .hero-date {
-    font-size: 6vw;
-    margin-bottom: 1vw;
-}
-/* Белая карточка — компактная */
+
+/* Белая карточка */
 .modal-content {
   background: #ffffff;
-  padding: 4vw 4vw;
+  padding: 4vw;
   border-radius: 4vw;
   text-align: center;
   box-shadow: 0 1vw 4vw rgba(0,0,0,0.15);
 
-  /* ограничиваем высоту, чтобы окно не растягивалось */
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  /* отключаем серый прямоугольник */
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+
+.modal-content:active {
+  background-color: #ffffff !important;
 }
 
 /* Заголовок */
-.modal-content .lead-text {
-  font-size: 4vw;
-  margin-bottom: 3vw;
-  font-weight: 500;
+.modal .hero-date {
+    font-size: 6vw;
+    margin-bottom: 1vw;
 }
 
 /* Поле ввода */
@@ -541,6 +557,10 @@ h3.decor-title {
   font-size: 2vw;
   outline: none;
   transition: 0.2s;
+
+  /* отключаем нативный эффект */
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .modal input:focus {
@@ -563,61 +583,32 @@ h3.decor-title {
   font-size: 2vw;
   cursor: pointer;
   transition: 0.2s;
-  color: #000000;
-  appearance: none;
-    -webkit-appearance: none;
-     -webkit-text-fill-color: #000000; /* ← вот это главное */
-}
-.buttons button:active{
-  color: #000000 !important; 
-  -webkit-text-fill-color: #000000;
-  -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    user-select: none;
-    outline: none !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    color: inherit !important;
-    outline: none !important;
-}
-/* Продолжить */
-#okBtn {
-    background: #f2f2f2;
-}
 
-#okBtn:hover {
-    background: #e6e6e6;
-
-}
-
-/* Отмена */
-#cancelBtn {
+  color: #000;
   background: #f2f2f2;
+
+  /* отключаем нативный стиль кнопок */
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  background-image: none !important;
+
+  /* отключаем overlay */
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
 }
 
+.buttons button:active {
+  background: #f2f2f2 !important;
+  color: #000 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Ховеры */
+#okBtn:hover,
 #cancelBtn:hover {
   background: #e6e6e6;
 }
 
-.modal, 
-.modal *, 
-.buttons button {
-    -webkit-tap-highlight-color: transparent !important;
-    tap-highlight-color: transparent !important;
-}
-
-/* Запрещаем браузеру менять фон при нажатии */
-.modal:active,
-.modal-content:active,
-.buttons button:active {
-    background-color: inherit !important;
-}
-
-/* Убираем системный стиль кнопок */
-.buttons button {
-    -webkit-appearance: none;
-    appearance: none;
-}
 /* VIDEO */
 
 .video-section {
