@@ -12,7 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <div class="hero-date">Введите имена гостей</div>
+    <input id="guestInput" type="text" placeholder="Имена гостей">
+    <div class="buttons">
+      <button id="okBtn">Продолжить</button>
+      <button id="cancelBtn">Отмена</button>
+    </div>
+  </div>
+</div>
 <body>
 
     <!-- 1 HERO -->
@@ -220,7 +229,7 @@
     <!-- 8 SLIDER -->
     <section class="section">
         <div class="hero-date decor-title">Пожелания</div>
-        <div class="container center narrow">
+        <div class="container center">
 
             
 
@@ -262,11 +271,11 @@
     <section class="section">
             <div class="hero-date decor-title">Анкета гостя</div>
 
-        <div class="container center narrow">
+        <div class="container center">
 
             <div class="lead-text">Просим подтвердить своё присутствие на мероприятии до: <br> <br> 29 / 04 / 2026</div>
             <div class="RSVP_btn">
-            <button class="btn" onclick="sendTelegram()">Подтвердить</button>
+            <button class="btn" onclick="openModal()">Подтвердить</button>
 </div>
         </div>
     </section>

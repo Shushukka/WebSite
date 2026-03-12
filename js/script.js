@@ -68,10 +68,19 @@ function prevSlide() {
 showSlide(current);
 
 // TELEGRAM
-async function sendTelegram() {
-    const name = prompt("Введите имена гостей:");
+function openModal() {
+    document.getElementById("modal").style.display = "flex";
+}
 
-    if (!name || name.trim() === "") {
+function closeModal() {
+    document.getElementById("guestInput").value = ""; // очищаем поле
+    document.getElementById("modal").style.display = "none";
+}
+
+document.getElementById("okBtn").onclick = async () => {
+    const name = document.getElementById("guestInput").value.trim();
+
+    if (!name) {
         alert("Данные введены неверно");
         return;
     }
@@ -83,4 +92,8 @@ async function sendTelegram() {
     });
 
     alert("Спасибо! Мы получили подтверждение 💌");
-}
+
+    closeModal(); // ← очищаем поле и закрываем окно
+};
+
+document.getElementById("cancelBtn").onclick = closeModal;

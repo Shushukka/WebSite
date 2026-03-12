@@ -485,6 +485,96 @@ h3.decor-title {
     margin-top: 4vw;
 }
 /* RSVP */
+/* Тёмный фон */
+/* Тёмный фон на весь экран */
+/* Тёмный фон на весь экран */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.modal .hero-date {
+    font-size: 6vw;
+    margin-bottom: 1vw;
+}
+/* Белая карточка — компактная */
+.modal-content {
+  background: #ffffff;
+  padding: 4vw 4vw;
+  border-radius: 4vw;
+  text-align: center;
+  box-shadow: 0 1vw 4vw rgba(0,0,0,0.15);
+
+  /* ограничиваем высоту, чтобы окно не растягивалось */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Заголовок */
+.modal-content .lead-text {
+  font-size: 4vw;
+  margin-bottom: 3vw;
+  font-weight: 500;
+}
+
+/* Поле ввода */
+.modal input {
+  width: 100%;
+  padding: 1vw;
+  margin-top: 1vw;
+  border-radius: 1vw;
+  border: 0.4vw solid #dcdcdc;
+  font-size: 2vw;
+  outline: none;
+  transition: 0.2s;
+}
+
+.modal input:focus {
+  border-color: #b8b8b8;
+}
+
+/* Контейнер кнопок */
+.buttons {
+  margin-top: 2vw;
+  display: flex;
+  gap: 1vw;
+}
+
+/* Кнопки */
+.buttons button {
+  flex: 1;
+  padding: 1vw 0;
+  border-radius: 1vw;
+  border: none;
+  font-size: 2vw;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Продолжить */
+#okBtn {
+    background: #f2f2f2;
+}
+
+#okBtn:hover {
+    background: #e6e6e6;
+
+}
+
+/* Отмена */
+#cancelBtn {
+  background: #f2f2f2;
+}
+
+#cancelBtn:hover {
+  background: #e6e6e6;
+}
+
 
 /* VIDEO */
 
@@ -551,7 +641,7 @@ h3.decor-title {
 }
 
 .btn:hover {
-    background: #444;
+    background: #bababa;
     /* чуть светлее */
     transform: translateY(-2px);
 }
