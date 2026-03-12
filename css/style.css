@@ -599,7 +599,25 @@ h3.decor-title {
   background: #e6e6e6;
 }
 
+.modal, 
+.modal *, 
+.buttons button {
+    -webkit-tap-highlight-color: transparent !important;
+    tap-highlight-color: transparent !important;
+}
 
+/* Запрещаем браузеру менять фон при нажатии */
+.modal:active,
+.modal-content:active,
+.buttons button:active {
+    background-color: inherit !important;
+}
+
+/* Убираем системный стиль кнопок */
+.buttons button {
+    -webkit-appearance: none;
+    appearance: none;
+}
 /* VIDEO */
 
 .video-section {
