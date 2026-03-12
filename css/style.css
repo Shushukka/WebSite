@@ -564,6 +564,9 @@ h3.decor-title {
   cursor: pointer;
   transition: 0.2s;
   color: #000000;
+  appearance: none;
+    -webkit-appearance: none;
+     -webkit-text-fill-color: #000000; /* ← вот это главное */
 }
 .buttons button:active{
   color: #000000 !important; 
