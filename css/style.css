@@ -563,6 +563,7 @@ h3.decor-title {
   font-size: 2vw;
   cursor: pointer;
   transition: 0.2s;
+  color: #000000;
 }
 
 /* Продолжить */
